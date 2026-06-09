@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MDLS.me | Inventario Industrial</title>
+  <meta name="description" content="Inventario industrial MDLS.me: boiler tubing, tubos de aleación, tube plugs y materiales críticos para cotización." />
+  <style>
+    :root { --navy:#071827; --navy2:#0d2538; --blue:#1d70b8; --steel:#64748b; --light:#f4f7fb; --line:#d7dee8; --white:#fff; --green:#16845b; --gold:#c58a1f; }
+    * { box-sizing:border-box; } body { margin:0; font-family:Inter, Arial, sans-serif; color:#15202b; background:var(--light); }
+    header { background:linear-gradient(135deg,var(--navy),var(--navy2)); color:white; position:sticky; top:0; z-index:20; border-bottom:1px solid rgba(255,255,255,.12); }
+    .bar { max-width:1200px; margin:auto; display:flex; align-items:center; justify-content:space-between; padding:16px 20px; gap:20px; }
+    .logo { font-weight:900; letter-spacing:.5px; font-size:24px; } .logo span { color:#7fc3ff; }
+    nav a { color:white; text-decoration:none; margin-left:18px; font-weight:700; font-size:14px; opacity:.9; } nav a:hover { opacity:1; color:#9bd2ff; }
+    .hero { background:radial-gradient(circle at 20% 20%,rgba(29,112,184,.45),transparent 35%), linear-gradient(135deg,#071827,#102d45); color:white; padding:72px 20px 56px; }
+    .wrap { max-width:1200px; margin:auto; } .hero h1 { font-size:48px; line-height:1.05; margin:0 0 18px; max-width:850px; }
+    .hero p { font-size:18px; max-width:780px; color:#dcecff; line-height:1.55; } .btns { display:flex; gap:12px; flex-wrap:wrap; margin-top:26px; }
+    .btn { border:0; cursor:pointer; padding:12px 18px; border-radius:10px; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+    .primary { background:var(--blue); color:white; } .secondary { background:white; color:var(--navy); } .ghost { background:#eef5fb; color:var(--navy); border:1px solid var(--line); }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:34px; } .stat { background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.15); padding:18px; border-radius:14px; }
+    .stat b { display:block; font-size:28px; } .stat span { color:#cfe5fa; font-size:13px; }
+    section { padding:36px 20px; } h2 { margin:0 0 16px; font-size:30px; } .subtitle { color:#536273; margin-top:-6px; }
+    .panel { background:white; border:1px solid var(--line); border-radius:16px; padding:18px; box-shadow:0 8px 24px rgba(10,25,41,.06); }
+    .filters { display:grid; grid-template-columns:2fr repeat(5,1fr); gap:10px; margin:16px 0; }
+    input, select, textarea { width:100%; padding:11px; border:1px solid var(--line); border-radius:10px; font:inherit; background:white; }
+    table { width:100%; border-collapse:collapse; background:white; } th,td { padding:10px 9px; border-bottom:1px solid #e8edf3; text-align:left; font-size:13px; vertical-align:top; } th { background:#f0f5fa; color:#26384a; position:sticky; top:65px; z-index:5; }
+    .tag { display:inline-block; padding:5px 8px; border-radius:999px; background:#e8f3ff; color:#075a98; font-weight:800; font-size:12px; } .ok { background:#e8f8f1; color:var(--green); }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; } .card { background:white; border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 8px 20px rgba(10,25,41,.05); }
+    .card h3 { margin:0 0 10px; } .meta { color:#596879; font-size:14px; line-height:1.5; }
+    .tech { display:grid; grid-template-columns:1.1fr .9fr; gap:18px; } .techbox { background:#f8fafc; border:1px solid var(--line); padding:14px; border-radius:14px; }
+    .rfq { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; } .full { grid-column:1/-1; }
+    footer { background:#071827; color:#cfe0ee; padding:28px 20px; margin-top:30px; } footer b { color:white; }
+    .small { font-size:12px; color:#6d7b8a; } .notice { border-left:4px solid var(--gold); background:#fff8e8; padding:12px; border-radius:10px; color:#4d3510; }
+    @media (max-width:900px) { .hero h1{font-size:34px} .filters,.stats,.grid,.tech,.rfq{grid-template-columns:1fr} nav{display:none} th{position:static} }
+  </style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="logo">MDLS<span>.me</span></div>
+    <nav><a href="#inventario">Inventario</a><a href="#materiales">Materiales</a><a href="#tecnica">Ficha técnica</a><a href="#rfq">RFQ</a><a href="#contacto">Contacto</a></nav>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <h1>Inventario Industrial Especializado</h1>
+      <p>Tubería para caldera, tubos de aleación, random lengths, tube plugs y materiales críticos para energía, manufactura, minería, agua e infraestructura.</p>
+      <div class="btns"><a class="btn primary" href="#inventario">Ver Inventario</a><a class="btn secondary" href="#rfq">Solicitar Cotización</a></div>
+      <div class="stats"><div class="stat"><b id="countProducts">0</b><span>Productos cargados</span></div><div class="stat"><b id="countMaterials">0</b><span>Grados / materiales</span></div><div class="stat"><b>RFQ</b><span>Disponibilidad sujeta a confirmación</span></div><div class="stat"><b>MTR</b><span>Validación técnica requerida</span></div></div>
+    </div>
+  </div>
+  <section id="inventario"><div class="wrap panel"><h2>Inventario</h2><p class="subtitle">Busca por material, OD, espesor, ubicación, condición o SKU.</p>
+    <div class="filters"><input id="q" placeholder="Buscar: SA213 T91, 1.5, Webco, plug..."/><select id="cat"><option value="">Categoría</option></select><select id="mat"><option value="">Material</option></select><select id="loc"><option value="">Ubicación</option></select><select id="cond"><option value="">Condición</option></select><button class="btn ghost" onclick="clearFilters()">Limpiar</button></div>
+    <div style="overflow:auto; max-height:620px;"><table><thead><tr><th>SKU</th><th>Producto</th><th>Material</th><th>OD</th><th>Wall</th><th>Largo</th><th>Cant.</th><th>Ubicación</th><th>Condición</th><th>RFQ</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </div></section>
+  <section id="materiales"><div class="wrap"><h2>Material Grades</h2><p class="subtitle">Páginas técnicas por grado, inspiradas en inventarios especializados de boiler tube.</p><div class="grid" id="materialCards"></div></div></section>
+  <section id="tecnica"><div class="wrap panel"><h2 id="techTitle">Ficha técnica</h2><p class="subtitle" id="techDesc">Selecciona un material para ver información técnica.</p><div class="tech"><div><div class="techbox"><h3>Inventario del material</h3><div id="gradeSummary"></div></div><br><div style="overflow:auto; max-height:360px;"><table><thead><tr><th>SKU</th><th>OD</th><th>Wall</th><th>Largo</th><th>Cant.</th><th>Ubicación</th><th>RFQ</th></tr></thead><tbody id="gradeRows"></tbody></table></div></div><div class="techbox"><h3>Datos técnicos</h3><p><b>Química:</b> <span id="chem"></span></p><p><b>Propiedades mecánicas:</b> <span id="mech"></span></p><p><b>P-Number:</b> <span id="pno"></span></p><p><b>Dureza:</b> <span id="hard"></span></p><p><b>Aplicaciones:</b> <span id="apps"></span></p><div class="notice"><b>Validación requerida:</b> Toda especificación, química, dureza, dimensiones, disponibilidad y equivalencia debe validarse contra ASTM/ASME, MTR, orden de compra y requisitos de ingeniería.</div></div></div></div></section>
+  <section id="rfq"><div class="wrap panel"><h2>Solicitar Cotización</h2><p class="subtitle">Formulario demo. En GitHub Pages no envía correos automáticamente; para producción se conecta a Formspree, Netlify Forms, Google Forms o backend propio.</p><form class="rfq" onsubmit="event.preventDefault(); alert('RFQ demo generado. En producción se conectará a correo o CRM.');"><input id="fName" placeholder="Nombre" required><input placeholder="Empresa" required><input type="email" placeholder="Email" required><input placeholder="Teléfono"><input id="fSku" placeholder="SKU / Producto"><input placeholder="Cantidad requerida"><input placeholder="Lugar de entrega"><input type="date"><textarea class="full" rows="4" placeholder="Comentarios técnicos, norma requerida, MTR, urgencia, etc."></textarea><button class="btn primary full" type="submit">Enviar RFQ</button></form></div></section>
+</main>
+<footer id="contacto"><div class="wrap"><b>MDLS.me – Multiservicios de Logística y Suministro S.A. de C.V.</b><p>Inventario industrial y suministro especializado. Productos sujetos a venta previa, disponibilidad y validación técnica.</p></div></footer>
+<script>
+const INVENTORY=[{"sku":"MDLS-BT-STK-0001","name":"SA178A Boiler Tube 1.5 in OD x 0.105 in Wall","category":"Boiler Tubes","material_spec":"SA178A","outer_diameter_in":1.5,"wall_thickness_in":0.105,"length_ft":40,"length_in":6,"quantity":null,"location":"Stock","condition":"Stock Length","availability":"Available - RFQ Required","lead_time":"Subject to confirmation","application":"Boiler, heat exchanger, utility and industrial tube applications","standard":"ASTM/ASME specification to be validated"}];
+const GRADES={SA178A:{chem:"Carbon steel",mech:"Minimum tensile 50,000 psi",pno:"P-1",hard:"N/A",apps:"Power generation, heating systems, industrial boilers"},SA210A1:{chem:"Carbon steel",mech:"Minimum tensile 60,000 psi",pno:"P-1",hard:"N/A",apps:"High-pressure boiler applications"},SA213T22:{chem:"Chromium-molybdenum alloy (2.25% Cr, 1% Mo)",mech:"Minimum tensile 65,000 psi",pno:"P-5",hard:"N/A",apps:"Superheater tubes, power generation"}};
+function renderInventory(){document.getElementById("countProducts").textContent=INVENTORY.length;let materials=new Set(INVENTORY.map(i=>i.material_spec));document.getElementById("countMaterials").textContent=materials.size;let html="";INVENTORY.forEach(item=>{html+=`<tr><td>${item.sku}</td><td>${item.name}</td><td><span class="tag">${item.material_spec}</span></td><td>${item.outer_diameter_in}</td><td>${item.wall_thickness_in}</td><td>${item.length_ft}' ${item.length_in}"</td><td>${item.quantity||"-"}</td><td>${item.location}</td><td><span class="tag ok">${item.condition}</span></td><td>${item.availability}</td></tr>`});document.getElementById("rows").innerHTML=html;}
+function renderMaterials(){let html="";Object.keys(GRADES).forEach(grade=>{html+=`<div class="card" onclick="selectGrade('${grade}')"><h3>${grade}</h3><p class="meta">${GRADES[grade].chem}</p><p class="meta small">${GRADES[grade].apps}</p></div>`});document.getElementById("materialCards").innerHTML=html;}
+function selectGrade(grade){if(!GRADES[grade])return;let data=GRADES[grade];document.getElementById("techTitle").textContent=`Ficha técnica - ${grade}`;document.getElementById("chem").textContent=data.chem;document.getElementById("mech").textContent=data.mech;document.getElementById("pno").textContent=data.pno;document.getElementById("hard").textContent=data.hard;document.getElementById("apps").textContent=data.apps;let gradeItems=INVENTORY.filter(i=>i.material_spec===grade);let html="";gradeItems.forEach(item=>{html+=`<tr><td>${item.sku}</td><td>${item.outer_diameter_in}</td><td>${item.wall_thickness_in}</td><td>${item.length_ft}'</td><td>${item.quantity||"-"}</td><td>${item.location}</td><td>${item.availability}</td></tr>`});document.getElementById("gradeRows").innerHTML=html;document.getElementById("gradeSummary").innerHTML=`<p><b>${gradeItems.length}</b> items en stock</p>`;}
+function clearFilters(){document.getElementById("q").value="";document.getElementById("cat").value="";document.getElementById("mat").value="";document.getElementById("loc").value="";document.getElementById("cond").value="";}
+renderInventory();renderMaterials();
+</script>
+</body>
+</html>
